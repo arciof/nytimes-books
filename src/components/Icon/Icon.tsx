@@ -4,19 +4,17 @@ const StyledRoot = styled.span(({ theme }) => ({}))
 
 interface LogoProps {
     name: string
-    isFilled: boolean
+    isFilled?: boolean
 }
 
-const Logo = (props: LogoProps) => {
+const Icon = ({ name, isFilled = false }: LogoProps) => {
     const CLASS_NAMES = [
         'material-icon',
         'material-symbols-outlined',
-        props.isFilled ? 'filled' : null,
+        isFilled ? 'filled' : null,
     ]
 
-    return (
-        <StyledRoot className={CLASS_NAMES.join(' ')}>{props.name}</StyledRoot>
-    )
+    return <StyledRoot className={CLASS_NAMES.join(' ')}>{name}</StyledRoot>
 }
 
-export default Logo
+export default Icon

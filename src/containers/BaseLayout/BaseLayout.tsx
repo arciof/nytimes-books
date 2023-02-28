@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import Header from '../../components/Header/Header'
+import Header from '../Header/Header'
 
 const StyledRoot = styled.div(({ theme }) => ({
     height: '90vh',
