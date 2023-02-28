@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
         vertical-align: baseline;
         font-family: 'Ubuntu', sans-serif;
         user-select: none;
+        box-sizing: border-box;
     }
 
     article, aside, details, figcaption, figure, 

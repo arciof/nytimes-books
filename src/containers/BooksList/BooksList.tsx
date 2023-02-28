@@ -9,6 +9,7 @@ const StyledRoot = styled.div(({ theme }) => ({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     gap: '10px',
+    rowGap: '20px',
     '.book': {
         width: '18%',
         height: 'auto',
@@ -33,12 +34,7 @@ const BooksList = () => {
         <StyledRoot className="books-list">
             {booksLists.map((list: BooksList) =>
                 list.books.map((book: Book) => (
-                    <Book
-                        key={book.primary_isbn13}
-                        title={book.title}
-                        author={book.author}
-                        imageURL={book.book_image}
-                    />
+                    <Book key={book.primary_isbn13} book={book} />
                 ))
             )}
         </StyledRoot>

@@ -1,47 +1,58 @@
 import styled from '@emotion/styled'
+import BookRank from './BookRank'
 
-const StyledRoot = styled.div(({ theme }) => ({
+const StyledRoot = styled.div(() => ({
     display: 'flex',
     flexDirection: 'column',
+    position: 'relative',
 }))
 
-const StyledImage = styled.img(({ theme }) => ({
+const StyledImage = styled.img(() => ({
     borderRadius: '10px',
     width: '100%',
     height: 'auto',
-    marginBottom: '10px',
+}))
+
+const StyledInfos = styled.div(({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    background: theme.colors.white,
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    borderRadius: '0 0 10px 10px',
+    padding: '15px 10px',
 }))
 
 const StyledTitle = styled.span(({ theme }) => ({
     fontWeight: 'bold',
     color: theme.colors.darkBlue,
     fontSize: '14px',
-    marginBottom: '2px',
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
+    marginBottom: '3px',
 }))
 
 const StyledAuthor = styled.span(({ theme }) => ({
     color: theme.colors.lightBlue,
     fontSize: '12px',
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
+    marginBottom: '5px',
 }))
 
 interface BookProps {
-    imageURL: string
-    title: string
-    author: string
+    book: Book
 }
 
-const Book = (props: BookProps) => {
+const Book = ({ book }: BookProps) => {
     return (
         <StyledRoot className="book">
-            <StyledImage src={props.imageURL} />
-            <StyledTitle>{props.title}</StyledTitle>
-            <StyledAuthor>{props.author}</StyledAuthor>
+            <StyledImage src={book.book_image} />
+            <StyledInfos>
+                <StyledTitle>{book.title}</StyledTitle>
+                <StyledAuthor>{book.author}</StyledAuthor>
+                <BookRank
+                    currentRank={book.rank}
+                    lastWeekRank={book.rank_last_week}
+                />
+            </StyledInfos>
         </StyledRoot>
     )
 }
