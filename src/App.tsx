@@ -1,5 +1,13 @@
+import { ThemeProvider } from "@emotion/react"
+import GlobalStyle from "./theme/global"
+import theme from "./theme/theme"
+
 const App = () => {
-  return <div className="App"></div>
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+    </ThemeProvider>
+  )
 }
 
 export default App
