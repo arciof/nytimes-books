@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
     html, body, div, span, applet, object, iframe,
@@ -20,35 +20,27 @@ const GlobalStyle = createGlobalStyle`
         font-size: 100%;
         font: inherit;
         vertical-align: baseline;
+        font-family: 'Ubuntu', sans-serif;
+        user-select: none;
     }
 
-    /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure, 
     footer, header, hgroup, menu, nav, section {
         display: block;
     }
 
-    body {
+    #root {
+        height: 100vh;
         line-height: 1;
+        background: rgb(255,210,177);
+        background: linear-gradient(90deg, rgba(255,210,177,1) 0%, rgba(240,203,193,1) 35%, rgba(209,191,217,1) 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     ol, ul {
         list-style: none;
-    }
-
-    blockquote, q {
-        quotes: none;
-    }
-
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-        content: '';
-        content: none;
-    }
-    
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
     }
 `
 

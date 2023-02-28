@@ -1,5 +1,12 @@
-import { Theme } from "@emotion/react";
+import { ThemeColors } from "../../types/colors"
+import colors from "./colors"
 
-const theme: Theme = {};
+export interface Theme {
+    colors: ThemeColors
+}
 
-export default theme;
+const theme: Theme = {
+    colors,
+}
+
+export default theme
