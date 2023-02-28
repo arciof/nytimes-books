@@ -3,4 +3,5 @@ export interface ThemeColors {
     black: string
     blue: string
     lightBlue: string
+    darkBlue: string
 }
