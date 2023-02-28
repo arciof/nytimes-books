@@ -4,7 +4,7 @@ import Search from '../../components/Search/Search'
 
 const StyledRoot = styled.span(({ theme }) => ({
     width: '100%',
-    height: '80px',
+    minHeight: '80px',
     backgroundColor: `${theme.colors.white}55`,
     display: 'flex',
     alignItems: 'center',

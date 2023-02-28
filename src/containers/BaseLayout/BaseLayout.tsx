@@ -1,7 +1,10 @@
 import styled from '@emotion/styled'
+import BooksList from '../BooksList/BooksList'
 import Header from '../Header/Header'
 
 const StyledRoot = styled.div(({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'column',
     height: '90vh',
     width: '90vw',
     backgroundColor: `${theme.colors.white}73`,
@@ -14,10 +17,35 @@ const StyledRoot = styled.div(({ theme }) => ({
     },
 }))
 
+const StyledMainContent = styled.div(({ theme }) => ({
+    margin: '20px 5px 20px 20px',
+    overflow: 'auto',
+    boxSizing: 'border-box',
+    scrollbarGutter: 'stable',
+    scrollbarWidth: 'none',
+    scrollbarColor: `red #010101`,
+    '::-webkit-scrollbar': {
+        width: '17px',
+    },
+    '::-webkit-scrollbar-track': {
+        background: 'transparent',
+    },
+    '::-webkit-scrollbar-thumb': {
+        backgroundColor: theme.colors.lightBlue,
+        borderRadius: '10px',
+    },
+    '.books-list': {
+        paddingRight: '10px',
+    },
+}))
+
 const BaseLayout = () => {
     return (
         <StyledRoot>
             <Header />
+            <StyledMainContent>
+                <BooksList />
+            </StyledMainContent>
         </StyledRoot>
     )
 }
