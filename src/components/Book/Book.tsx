@@ -27,7 +27,7 @@ const StyledInfos = styled.div(({ theme }) => ({
 const StyledTitle = styled.span(({ theme }) => ({
     fontWeight: 'bold',
     color: theme.colors.darkBlue,
-    fontSize: '14px',
+    fontSize: '13px',
     marginBottom: '3px',
 }))
 

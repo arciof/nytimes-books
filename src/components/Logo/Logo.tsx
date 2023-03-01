@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { useTheme } from '@emotion/react'
 import Icon from '../Icon/Icon'
 
 const StyledRoot = styled.span(({ theme }) => ({
@@ -14,9 +15,16 @@ const StyledRoot = styled.span(({ theme }) => ({
 }))
 
 const Logo = () => {
+    const theme = useTheme()
+
     return (
         <StyledRoot>
-            <Icon name="book" isFilled={true} />
+            <Icon
+                name="book"
+                isFilled={true}
+                size={20}
+                color={theme.colors.darkBlue}
+            />
             NYT Books
         </StyledRoot>
     )

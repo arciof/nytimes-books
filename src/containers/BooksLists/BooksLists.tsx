@@ -2,21 +2,15 @@ import styled from '@emotion/styled'
 import { useEffect, useState } from 'react'
 import fetchBooksLists from '../../api/fetchBooksLists'
 import Book from '../../components/Book/Book'
+import BooksList from '../../components/BooksList/BooksList'
 
-const StyledRoot = styled.div(({ theme }) => ({
+const StyledRoot = styled.div(() => ({
     display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    gap: '10px',
-    rowGap: '20px',
-    '.book': {
-        width: '18%',
-        height: 'auto',
-    },
+    flexDirection: 'column',
+    gap: '30px',
 }))
 
-const BooksList = () => {
+const BooksLists = () => {
     const [booksLists, setBooksLists] = useState<BooksList[]>([])
 
     useEffect(() => {
@@ -32,13 +26,15 @@ const BooksList = () => {
 
     return (
         <StyledRoot className="books-list">
-            {booksLists.map((list: BooksList) =>
-                list.books.map((book: Book) => (
-                    <Book key={book.primary_isbn13} book={book} />
-                ))
-            )}
+            {booksLists.map((list: BooksList) => (
+                <BooksList key={list.list_name} name={list.list_name}>
+                    {list.books.map((book: Book) => (
+                        <Book key={book.primary_isbn13} book={book} />
+                    ))}
+                </BooksList>
+            ))}
         </StyledRoot>
     )
 }
 
-export default BooksList
+export default BooksLists

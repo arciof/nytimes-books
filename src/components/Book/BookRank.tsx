@@ -21,9 +21,9 @@ interface BookRankProps {
 
 const RankIcon = ({ rankDiff }: { rankDiff: number }) => {
     if (rankDiff < 0)
-        return <Icon name="arrow_drop_down" color="red" size={22} />
+        return <Icon name="arrow_downward" color="red" size={14} />
     if (rankDiff > 0)
-        return <Icon name="arrow_drop_up" color="green" size={22} />
+        return <Icon name="arrow_upward" color="green" size={14} />
 
     return <Icon name="equal" size={12} />
 }

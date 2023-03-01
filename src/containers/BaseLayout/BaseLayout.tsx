@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import BooksList from '../BooksList/BooksList'
+import BooksLists from '../BooksLists/BooksLists'
 import Header from '../Header/Header'
 
 const StyledRoot = styled.div(({ theme }) => ({
@@ -25,7 +25,7 @@ const StyledMainContent = styled.div(({ theme }) => ({
     scrollbarWidth: 'none',
     scrollbarColor: `red #010101`,
     '::-webkit-scrollbar': {
-        width: '17px',
+        width: '15px',
     },
     '::-webkit-scrollbar-track': {
         background: 'transparent',
@@ -44,7 +44,7 @@ const BaseLayout = () => {
         <StyledRoot>
             <Header />
             <StyledMainContent>
-                <BooksList />
+                <BooksLists />
             </StyledMainContent>
         </StyledRoot>
     )
