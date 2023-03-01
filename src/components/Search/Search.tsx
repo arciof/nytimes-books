@@ -1,3 +1,4 @@
+import { useTheme } from '@emotion/react'
 import styled from '@emotion/styled'
 import Icon from '../Icon/Icon'
 
@@ -21,15 +22,19 @@ const StyledInput = styled.input(({ theme }) => ({
 
 interface SearchProps {
     onChangeCb: any
+    value: string
 }
 
-const Search = ({ onChangeCb }: SearchProps) => {
+const Search = ({ onChangeCb, value }: SearchProps) => {
+    const theme = useTheme()
+
     return (
         <StyledRoot>
-            <Icon name={'search'} />
+            <Icon name={'search'} size={24} color={theme.colors.darkBlue} />
             <StyledInput
                 type={'text'}
                 placeholder={'What do you want to read?'}
+                value={value}
                 onChange={(e) => onChangeCb(e.target.value)}
             />
         </StyledRoot>

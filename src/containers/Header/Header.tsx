@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
+import { useContext } from 'react'
 import Logo from '../../components/Logo/Logo'
 import Search from '../../components/Search/Search'
+import { FilterContext } from '../../context/FilterContext'
 
 const StyledRoot = styled.span(({ theme }) => ({
     width: '100%',
@@ -14,10 +16,15 @@ const StyledRoot = styled.span(({ theme }) => ({
 }))
 
 const Header = () => {
+    const { searchFilter, setSearchFilter } = useContext(FilterContext)
+
     return (
         <StyledRoot className="header">
             <Logo />
-            <Search onChangeCb={(value: string) => console.log(value)} />
+            <Search
+                onChangeCb={(value: string) => setSearchFilter(value)}
+                value={searchFilter}
+            />
         </StyledRoot>
     )
 }
